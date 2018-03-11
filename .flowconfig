@@ -1,0 +1,31 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/@sbg/.*
+<PROJECT_ROOT>/node_modules/load-grunt-config/.*
+<PROJECT_ROOT>/node_modules/react/.*
+
+[libs]
+flow-typed
+src/js/thirdparty
+src/js/widgets/account/types
+
+[options]
+module.ignore_non_literal_requires=true
+module.file_ext=.js
+module.file_ext=.jsx
+
+esproposal.class_static_fields=enable
+esproposal.class_instance_fields=enable
+
+suppress_type=$FlowIssue
+suppress_type=$FlowFixMe
+suppress_type=$FixMe
+suppress_type=$FlowExpectedError
+
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe\\($\\|[^(]\\|(\\(>=0\\.\\(2[0-2]\\|1[0-9]\\|[0-9]\\).[0-9]\\)? *\\(site=[a-z,_]*www[a-z,_]*\\)?)\\)
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssue\\((\\(>=0\\.\\(2[0-2]\\|1[0-9]\\|[0-9]\\).[0-9]\\)? *\\(site=[a-z,_]*www[a-z,_]*\\)?)\\)?:? #[0-9]+
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
+suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
+
+module.name_mapper='.*\(.scss\)' -> 'empty/object'
+module.name_mapper='^react-relay\|ui-data-layer\|redux\|react-redux\|qbo-ui-services\|chai-as-promised\|neo/.*\|@sbg/.*\|web-shell-core/.*\|hui-react\|hui-react/.*\|intern.*\|sinon.*$' -> 'empty/object'
+module.name_mapper='^src/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
